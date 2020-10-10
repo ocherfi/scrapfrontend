@@ -1,0 +1,61 @@
+<style>
+  hr {
+    border: 3px solid #bd2130;
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+  }
+
+  .myrow {
+    border-top: 10px solid #007bff;
+    border-radius: 5px;
+  }
+</style>
+<div class="container">
+  <div class="row myrow">
+    <div class="col-md-12">
+      <hr>
+      <button class="btn btn-danger">LATEST MANGA</button>
+
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngFor="let item of mangas; index as i">
+          <div class="media" *ngIf="i%2==0">
+            <img src="{{item.img}}" class="align-self-start mr-3" alt="{{item.title}}" title="{{item.title}}"
+              width="80px">
+            <div class="media-body">
+              <p class="mt-0"><a href="{{item.link}}"><b>{{item.title}}</b></a></p>
+              <ul>
+                <li><a href="{{item.link_chapitres[0]}}">{{item.chapitres[0]}}</a></li>
+                <li><a href="{{item.link_chapitres[0]}}">{{item.chapitres[1]}}</a></li>
+                <li><a href="{{item.link_chapitres[0]}}">{{item.chapitres[2]}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div *ngFor="let item of mangas; index as i">
+          <div class="media" *ngIf="i%2!=0">
+            <img src="{{item.img}}" class="align-self-start mr-3" alt="{{item.title}}" title="{{item.title}}"
+              width="80px">
+            <div class="media-body">
+              <p class="mt-0"><a href="{{item.link}}"><b>{{item.title}}</b></a></p>
+              <ul>
+                <li><a href="{{item.link_chapitres[0]}}">{{item.chapitres[0]}}</a></li>
+                <li><a href="{{item.link_chapitres[0]}}">{{item.chapitres[1]}}</a></li>
+                <li><a href="{{item.link_chapitres[0]}}">{{item.chapitres[2]}}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button type="button" class="btn btn-danger btn-lg btn-block">More</button>
+      </div>
+    </div>
+  </div>
+</div>
